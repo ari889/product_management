@@ -115,7 +115,7 @@
 
 						<?php
 
-						$sql = "SELECT * FROM products ORDER BY id DESC";
+						$sql = "SELECT product_name as ponner_naam, product_price, quantity, total, photo FROM products ORDER BY id DESC";
 						$all_products = $connection -> query($sql);
 						$i = 1;
 						while($product = $all_products -> fetch_assoc()):
@@ -123,7 +123,7 @@
               <tr>
                 <th scope="row"><?php echo $i; $i++; ?></th>
                 <td><img src="products/<?php echo $product['photo']; ?>" alt="" class="img-fluid custom-image"></td>
-                <td><?php echo $product['product_name']; ?></td>
+                <td><?php echo $product['ponner_naam']; ?></td>
                 <td><?php echo $product['product_price']; ?></td>
                 <td><?php echo $product['quantity']; ?></td>
                 <td><?php echo $product['total']; ?></td>
